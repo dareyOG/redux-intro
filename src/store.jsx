@@ -34,8 +34,9 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-store.dispatch({ type: 'account/deposit', payload: 500 });
+/* store.dispatch({ type: 'account/deposit', payload: 500 });
 console.log('current state', store.getState());
+
 store.dispatch({ type: 'account/withdrawal', payload: 200 });
 console.log('current state', store.getState());
 
@@ -43,4 +44,33 @@ store.dispatch({ type: 'account/requestLoan', payload: { amount: 1000, purpose: 
 console.log('current state', store.getState());
 
 store.dispatch({ type: 'account/payLoan' });
-console.log('current state', store.getState());
+console.log('current state', store.getState()); */
+
+// Action creators
+function deposit(amount) {
+  return { type: 'account/deposit', payload: amount };
+}
+
+function withdraw(amount) {
+  return { type: 'account/withdrawal', payload: amount };
+}
+
+function requestLoan(amount, purpose) {
+  return { type: 'account/requestLoan', payload: { amount, purpose } };
+}
+
+function payLoan() {
+  return { type: 'account/payLoan' };
+}
+
+store.dispatch(deposit(700));
+console.log(store.getState());
+
+store.dispatch(withdraw(400));
+console.log(store.getState());
+
+store.dispatch(requestLoan(50000, 'start a business'));
+console.log(store.getState());
+
+store.dispatch(payLoan());
+console.log(store.getState());
