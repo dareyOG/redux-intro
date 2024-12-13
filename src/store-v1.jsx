@@ -76,7 +76,8 @@ console.log('current state', store.getState());
 store.dispatch({ type: 'account/payLoan' });
 console.log('current state', store.getState()); */
 
-// Action creators
+// ============ Action creators ==============
+
 function deposit(amount) {
   return { type: 'account/deposit', payload: amount };
 }
@@ -93,7 +94,7 @@ function payLoan() {
   return { type: 'account/payLoan' };
 }
 
-store.dispatch(deposit(700));
+/* store.dispatch(deposit(700));
 console.log(store.getState());
 
 store.dispatch(withdraw(400));
@@ -103,7 +104,7 @@ store.dispatch(requestLoan(50000, 'start a business'));
 console.log(store.getState());
 
 store.dispatch(payLoan());
-console.log(store.getState());
+console.log(store.getState()); */
 
 function createCustomer(fullName, nationalID) {
   return {

@@ -1,9 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './App.jsx';
-import { Provider } from 'react-redux';
-
 // import './store-v1';
 import store from './store';
 
@@ -11,8 +10,7 @@ import store from './store';
 //   type: 'customer/createCustomer',
 //   payload: { fullName: 'Jesse Mosh', nationalID: 'a2jz', createdAt: new Date() }
 // });
-
-console.log(store.getState());
+// console.log(store.getState());
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
